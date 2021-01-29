@@ -18,8 +18,6 @@ class Pacman {
   }
 
   mount() {
-    console.log(this.pacman);
-    console.log(this.pacStage.stage);
     this.pacStage.stage.appendChild(this.pacman); /// arghhhhhhhhhhhh
   }
 
@@ -30,24 +28,30 @@ class Pacman {
   move(e) {
     switch (e.key) {
       case 'ArrowLeft':
+        if (this.xpos === 0) return;
         this.xpos -= 1;
         this.pacman.classList.remove('right', 'up', 'down');
         this.pacman.classList.add('left');
         this.update();
         break;
       case 'ArrowRight':
+        if (this.xpos === pacstage.width - 1) return;
+
         this.xpos += 1;
         this.pacman.classList.remove('left', 'up', 'down');
         this.pacman.classList.add('right');
         this.update();
         break;
       case 'ArrowUp':
+        if (this.ypos === 0) return;
+
         this.ypos -= 1;
         this.pacman.classList.remove('right', 'left', 'down');
         this.pacman.classList.add('up');
         this.update();
         break;
       case 'ArrowDown':
+        if (this.ypos === pacstage.height - 1) return;
         this.ypos += 1;
         this.pacman.classList.remove('right', 'left', 'up');
         this.pacman.classList.add('down');
