@@ -31,12 +31,16 @@ body {
   width: 85px;
   height: 85px;
 
+
+
   &--pac {
     position: absolute;
     font-weight: bold;
     text-align: center;
     padding-top: 65px;
-    user-select: none;    
+    user-select: none;
+
+
   }
 
   &--wall {
@@ -56,9 +60,17 @@ body {
   }
 }
 
+.closed {
+  background-position-x: 85px;
+
+}
+
+
+
 .pacboy {
   &-active-light {
     background-image: url('/img/pacboy-active-light.png');
+
   }
 
   &-active-medium {
