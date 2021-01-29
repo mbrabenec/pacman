@@ -31,8 +31,6 @@ body {
   width: 85px;
   height: 85px;
 
-
-
   &--pac {
     position: absolute;
     font-weight: bold;
@@ -64,23 +62,19 @@ body {
 
 .right {
   background-position-y: 0px;
-
 }
 
 .left {
   background-position-y: 255px;
-
 }
 
 .down {
   background-position-y: 170px;
-
 }
 
 
 .up {
   background-position-y: 85px;
-
 }
 
 
