@@ -1,83 +1,34 @@
+// const app = document.querySelector('#app')
+// const pacstage = new PacStage;
+// pacstage.mount(app);
+
+
 'use strict';
 const TILE_SIZE = 85;
 /*let xpos = 0;
  */
+
 class PacStage {
   constructor() {
     this.stage = this.renderStage()
-
+    this.pacman = new Pacman(this);
   }
+
   renderStage() {
+    console.log("rs");
     const pacStage = document.createElement('div');
     pacStage.className = 'stage';
     return pacStage;
   }
-  renderElements() {
-    const pacman = new Pacman(this);
-  }
 
   mount(parent) {
-    this.stageElement = this.renderStage();
-    parent.appendChild(this.stageElement);
-    return this.stageElement;
+    console.log("mount");
+    parent.appendChild(this.stage);
   }
 }
 
-class Pacman {
-  constructor(pacStage /* xpos, ypos */ ) {
-    /* this.xpos = xpos;
-    this.ypos = ypos */
-    this.pacStage = pacStage;
-    this.pacman = this._renderPacman();
 
-    this.pacStage.stage.appendChild(this.pacman)
-  }
 
-  _renderPacman() {
-    const pacEntity = document.createElement('div');
-    pacEntity.className = ('entity', 'entity--pac', 'pacboy-active-light')
-    document.addEventListener('keydown', (e) => {
-      pacEntity.classList.toggle('closed');
-      move(e);
-    });
-    return pacEntity;
-  }
-  update() {
-    this.pacEntity.style.left = `${this.xpos * TILE_SIZE}px`;
-    this.pacEntity.style.top = `${this.ypos * TILE_SIZE}px`;
-  }
-  move(e) {
-    switch (e.key) {
-      case 'ArrowLeft':
-        this.xpos -= 1;
-        this.pacEntity.classList.remove('right', 'up', 'down');
-        this.pacEntity.classList.add('left');
-        this.update();
-        break;
-      case 'ArrowRight':
-        this.xpos += 1;
-        this.pacEntity.classList.remove('left', 'up', 'down');
-        this.pacEntity.classList.add('right');
-        this.update();
-        break;
-      case 'ArrowUp':
-        this.ypos -= 1;
-        this.pacEntity.classList.remove('right', 'left', 'down');
-        this.pacEntity.classList.add('up');
-        this.update();
-        break;
-      case 'ArrowDown':
-        this.ypos += 1;
-        this.pacEntity.classList.remove('right', 'left', 'up');
-        this.pacEntity.classList.add('down');
-        this.update();
-        break;
-      default:
-        console.log('stop mashing the keyboard')
-
-    }
-  };
-};
 const app = document.querySelector('#app')
 const pacstage = new PacStage;
-pacstage.mount(app)
+pacstage.mount(app);
