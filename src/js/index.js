@@ -1,4 +1,3 @@
-
 'use strict';
 const TILE_SIZE = 85;
 /*let xpos = 0;
@@ -13,7 +12,11 @@ class PacStage {
     this.tileHeight = `${height*TILE_SIZE}px`;
     this.stage = this.renderStage()
     this.pacman = new Pacman(this);
-
+    this.entities = [{
+      x: 1,
+      y: 1,
+      type: 'wall'
+    }];
 
 
   }
@@ -29,6 +32,18 @@ class PacStage {
 
   mount(parent) {
     parent.appendChild(this.stage);
+  }
+  getEntites() {
+    this.entities.push(new Entity)
+  }
+
+  collisonDetection(x, y) {
+    for (let i = 0; i < this.entities.length; i++) {
+      if (x === this.entities[i].x && y === this.entities[i].y) {
+        console.log(this.entities[i].type)
+        return this.entities[i].type;
+      }
+    }
   }
 }
 

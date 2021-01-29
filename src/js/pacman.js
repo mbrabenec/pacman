@@ -29,6 +29,7 @@ class Pacman {
     switch (e.key) {
       case 'ArrowLeft':
         if (this.xpos === 0) return;
+        if (pacstage.collisonDetection(this.xpos - 1, this.ypos) === 'wall') return;
         this.xpos -= 1;
         this.pacman.classList.remove('right', 'up', 'down');
         this.pacman.classList.add('left');
@@ -36,7 +37,7 @@ class Pacman {
         break;
       case 'ArrowRight':
         if (this.xpos === pacstage.width - 1) return;
-
+        if (pacstage.collisonDetection(this.xpos + 1, this.ypos) === 'wall') return;
         this.xpos += 1;
         this.pacman.classList.remove('left', 'up', 'down');
         this.pacman.classList.add('right');
@@ -44,7 +45,7 @@ class Pacman {
         break;
       case 'ArrowUp':
         if (this.ypos === 0) return;
-
+        if (pacstage.collisonDetection(this.xpos, this.ypos - 1) === 'wall') return;
         this.ypos -= 1;
         this.pacman.classList.remove('right', 'left', 'down');
         this.pacman.classList.add('up');
@@ -52,6 +53,7 @@ class Pacman {
         break;
       case 'ArrowDown':
         if (this.ypos === pacstage.height - 1) return;
+        if (pacstage.collisonDetection(this.xpos, this.ypos + 1) === 'wall') return;
         this.ypos += 1;
         this.pacman.classList.remove('right', 'left', 'up');
         this.pacman.classList.add('down');
