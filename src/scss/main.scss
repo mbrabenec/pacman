@@ -39,8 +39,6 @@ body {
     text-align: center;
     padding-top: 65px;
     user-select: none;
-
-
   }
 
   &--wall {
@@ -63,6 +61,30 @@ body {
 .closed {
   background-position-x: 85px;
 }
+
+.right {
+  background-position-y: 0px;
+
+}
+
+.left {
+  background-position-y: 85px;
+
+}
+
+.down {
+  background-position-y: 170px;
+
+}
+
+
+.up {
+  background-position-y: 255px;
+
+}
+
+
+
 
 
 
