@@ -1,10 +1,8 @@
 'use strict';
 
-
-console.log('it works!');
-
 document.addEventListener('keydown', (event) => {
-    if(event.code === 'ArrowRight') {
-      console.log("a")
-    }
-  });
+  const pacEntity = document.querySelector('.entity--pac');
+  pacEntity.classList.toggle('closed');
+  // if (event.code === 'ArrowRight') {
+
+});
