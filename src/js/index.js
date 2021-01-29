@@ -1,7 +1,3 @@
-// const app = document.querySelector('#app')
-// const pacstage = new PacStage;
-// pacstage.mount(app);
-
 
 'use strict';
 const TILE_SIZE = 85;
@@ -26,9 +22,6 @@ class PacStage {
     parent.appendChild(this.stage);
   }
 }
-
-
-
 
 class Pacman {
   constructor(pacStage, xpos = 0, ypos = 0) {
@@ -95,7 +88,6 @@ class Pacman {
     }
   };
 };
-
 
 const app = document.querySelector('#app')
 const pacstage = new PacStage;
