@@ -15,14 +15,12 @@ class PacStage {
   }
 
   renderStage() {
-    console.log("rs");
     const pacStage = document.createElement('div');
     pacStage.className = 'stage';
     return pacStage;
   }
 
   mount(parent) {
-    console.log("mount");
     parent.appendChild(this.stage);
   }
 }

@@ -1,6 +1,5 @@
 class Pacman {
   constructor(pacStage, xpos = 0, ypos = 0) {
-    console.log("pack const");
     this.xpos = xpos;
     this.ypos = ypos
     this.pacStage = pacStage;
@@ -9,7 +8,6 @@ class Pacman {
   }
 
   _renderPacman() {
-    console.log("redenr pack");
     const pacEntity = document.createElement('div');
     pacEntity.classList.add('entity', 'entity--pac', 'pacboy-active-light')
     document.addEventListener('keydown', (e) => {
@@ -20,7 +18,6 @@ class Pacman {
   }
 
   mount() {
-    console.log("mt pack");
     console.log(this.pacman);
     console.log(this.pacStage.stage);
     this.pacStage.stage.appendChild(this.pacman); /// arghhhhhhhhhhhh
@@ -31,7 +28,6 @@ class Pacman {
     this.pacman.style.top = `${this.ypos * TILE_SIZE}px`;
   }
   move(e) {
-    console.log(e.key)
     switch (e.key) {
       case 'ArrowLeft':
         this.xpos -= 1;
