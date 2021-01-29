@@ -169,4 +169,7 @@ class Entity {
   }
 
   _renderEntites() {}
+  unmount() {
+    this.entity.removeEntity();
+  }
 }

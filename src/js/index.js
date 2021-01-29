@@ -15,7 +15,7 @@ class PacStage {
     this.entities = [{
       x: 1,
       y: 1,
-      type: 'wall'
+      type: 'apple'
     }];
 
 
@@ -41,9 +41,16 @@ class PacStage {
     for (let i = 0; i < this.entities.length; i++) {
       if (x === this.entities[i].x && y === this.entities[i].y) {
         console.log(this.entities[i].type)
+        if (this.entities[i].type === 'apple') {
+          this.removeEntity(i)
+        }
+        console.log(this.entities);
         return this.entities[i].type;
       }
     }
+  }
+  removeEntity(i) {
+    this.entities.splice(i, 1)
   }
 }
 
