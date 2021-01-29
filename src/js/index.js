@@ -5,10 +5,11 @@ const TILE_SIZE = 85;
 class PacStage {
   constructor() {
     this.stage = this.renderStage()
+
   }
   renderStage() {
     const pacStage = document.createElement('div');
-    pacStage.className = "stage";
+    pacStage.className = 'stage';
     return pacStage;
   }
   renderElements() {
@@ -80,34 +81,3 @@ class Pacman {
 const app = document.querySelector('#app')
 const pacstage = new PacStage;
 pacstage.mount(app)
-
-
-/* document.addEventListener('keydown', (event) => {
-  pacEntity.classList.toggle('closed');
-  if (event.code === 'ArrowRight') {
-    xpos += 85;
-    pacEntity.classList.remove('left', 'up', 'down');
-    pacEntity.classList.add('right');
-    pacEntity.style.left = `${xpos}px`;
-  }
-  if (event.code === 'ArrowLeft') {
-    xpos -= 85;
-    pacEntity.classList.remove('right', 'up', 'down');
-    pacEntity.classList.add('left');
-    pacEntity.style.left = `${xpos}px`;
-
-  }
-  if (event.code === 'ArrowUp') {
-    ypos -= 85;
-    pacEntity.classList.remove('left', 'left', 'down');
-    pacEntity.classList.add('up');
-    pacEntity.style.top = `${ypos}px`;
-
-  }
-  if (event.code === 'ArrowDown') {
-    pacEntity.classList.remove('left', 'up', 'right');
-
-    pacEntity.classList.add('down');
-  }
-
-}); */
