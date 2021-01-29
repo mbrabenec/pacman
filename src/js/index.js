@@ -13,10 +13,20 @@ class PacStage {
     this.stage = this.renderStage()
     this.pacman = new Pacman(this);
     this.entities = [{
-      x: 1,
-      y: 1,
-      type: 'apple'
-    }];
+        x: 1,
+        y: 1,
+        type: 'wall'
+      },
+      {
+        x: 2,
+        y: 2,
+        type: 'bomb'
+      }, {
+        x: 3,
+        y: 3,
+        type: 'apple'
+      }
+    ];
 
 
   }
@@ -38,13 +48,17 @@ class PacStage {
   }
 
   collisonDetection(x, y) {
+
+    //switch
+
+
     for (let i = 0; i < this.entities.length; i++) {
       if (x === this.entities[i].x && y === this.entities[i].y) {
         console.log(this.entities[i].type)
-        if (this.entities[i].type === 'apple') {
-          this.removeEntity(i)
-        }
-        console.log(this.entities);
+        // if (this.entities[i].type === 'apple') {
+        //   this.removeEntity(i)
+        // }
+        // console.log(this.entities);
         return this.entities[i].type;
       }
     }
