@@ -1,5 +1,4 @@
-'use strict';
-const TILE_SIZE = 85;
+
 
 class PacStage {
   constructor(width, height) {
@@ -11,21 +10,7 @@ class PacStage {
     this.tileHeight = `${this.height*TILE_SIZE}px`;
     this.stage = this.renderStage();
     this.pacman = new Pacman(this);
-    this.entities = [{
-        x: 1,
-        y: 1,
-        type: 'wall'
-      },
-      {
-        x: 2,
-        y: 2,
-        type: 'bomb'
-      }, {
-        x: 3,
-        y: 3,
-        type: 'apple'
-      }
-    ];
+    this.entities = [];
 
 
   }
@@ -36,7 +21,6 @@ class PacStage {
     pacStage.classList.add('stage');
     pacStage.style.width = this.tileWidth;
     pacStage.style.height = this.tileHeight;
-    console.log("k");
     return pacStage;
   }
 
@@ -69,6 +53,3 @@ class PacStage {
 }
 
 
-const app = document.querySelector('#app')
-const pacstage = new PacStage(5, 5);
-pacstage.mount(app);
