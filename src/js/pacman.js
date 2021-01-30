@@ -2,8 +2,12 @@ class Pacman {
   constructor(pacStage, xpos = 0, ypos = 0) {
     this.xpos = xpos;
     this.ypos = ypos
+
+  
     this.pacStage = pacStage;
     this.pacman = this._renderPacman();
+
+
     this.mount()
   }
 
