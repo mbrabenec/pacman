@@ -14,32 +14,23 @@ const TILE_SIZE = 85;
 
 const pacstage = new PacStage(width, height);
 
-
 fetch(URL)
   .then((resp) => resp.json())
   .then((data) => {
-
-    console.log(data);
-
     let apples = data.apples;
-    apples.forEach(element => {
-        pacstage.entities.push(new Entity(element.x, element.y, "apple"));
+    apples.forEach((element) => {
+      pacstage.entities.push(new Entity(element.x, element.y, "apple"));
     });
 
     let bombs = data.bombs;
-    bombs.forEach(element => {
-        pacstage.entities.push(new Entity(element.x, element.y, "bomb"));
+    bombs.forEach((element) => {
+      pacstage.entities.push(new Entity(element.x, element.y, "bomb"));
     });
 
     let walls = data.walls;
-    walls.forEach(element => {
-        pacstage.entities.push(new Entity(element.x, element.y, "wall"));
+    walls.forEach((element) => {
+      pacstage.entities.push(new Entity(element.x, element.y, "wall"));
     });
 
     pacstage.mount(mountTarget);
-
   });
-
-
-
-
