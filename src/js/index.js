@@ -12,9 +12,9 @@ const TILE_SIZE = 85;
 
 //run game
 
-const pacstage = new PacStage(width, height);
+const pacstage = new PacStage(width, height);     // stage 1
 
-fetch(URL)
+fetch(URL)                                        // process data
   .then((resp) => resp.json())
   .then((data) => {
     let apples = data.apples;
@@ -24,7 +24,7 @@ fetch(URL)
 
     let bombs = data.bombs;
     bombs.forEach((element) => {
-      pacstage.entities.push(new Entity(element.x, element.y, "bomb"));
+      pacstage.entities.push(new Entity(element.x, element.y, "bomb",));
     });
 
     let walls = data.walls;
@@ -32,5 +32,5 @@ fetch(URL)
       pacstage.entities.push(new Entity(element.x, element.y, "wall"));
     });
 
-    pacstage.mount(mountTarget);
+    pacstage.mount(mountTarget);                // stage 2
   });
